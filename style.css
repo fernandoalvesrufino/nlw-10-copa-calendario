@@ -4,15 +4,39 @@
   box-sizing: border-box;
 }
 
+:root {
+  --card-title-border-color: #746615;
+  --card-color-primary: #f7dd43;
+  --card-bg-color: #1D1C19;
+  --bg: url(./assets/bg-yellow.svg)
+}
+
+body.blue {
+  --card-title-border-color: #338AF3;
+  --card-color-primary: #338AF3;
+  --card-bg-color: #202024;
+  --bg: url(./assets/bg-blue.svg)
+}
+body.green {
+  --card-title-border-color: #047C3F;
+  --card-color-primary: #047C3F;
+  --card-bg-color: #1A1F1B;
+  --bg: url(./assets/bg-green.svg)
+}
+
+
+
 ul {
   list-style: none;
 }
 
 body {
   background-color: #121214;
-  background-image: url(./assets/bg.svg);
-  background-position-x: center;
-  background-position-y: -715px;
+  background-image: var(--bg);
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: contain;
+  /* background-size: cover; Esse foi o utilizado na NLW, mas eu gostei mais do contain*/
 }
 
 body * {
@@ -21,7 +45,8 @@ body * {
 
 #app {
   width: fit-content; /*Encaixa o conteudo na tela. Isso é bom porque o app será apresentado em dispositivos diferentes*/
-  margin: 52px auto;
+  margin: auto;
+  padding-top: 52px;
 }
 
 header {
@@ -38,19 +63,19 @@ header {
 .card {
   padding: 32px 23px;
   text-align: center;
-  background: #1D1C19;
-  border-bottom: 2px solid #F7DD43;
+  background: var(--card-bg-color);
+  border-bottom: 2px solid var(--card-color-primary);
   border-radius: 6px;
 }
 
 .card h2 {
   padding: 8px 16px;
-  border: 1px solid #746615;
+  border: 1px solid var(--card-title-border-color);
   border-radius: 6px;
   display: flex;
   justify-content: center;
   gap: 16px;
-  color: #F7DD43;
+  color: #f7dd43;
   align-items: center;
   width: fit-content;
   margin-inline: auto;
@@ -86,4 +111,40 @@ header {
   font-size: 36px;
   line-height: 125%;
   color: #E1E1E6;
+}
+
+.card h2:hover,
+.card ul li strong:hover, 
+.card ul li img:hover {
+  transform: scale(1.1);
+}
+
+.card h2,
+.card ul li strong,
+.card ul li img {
+  transition: transform 0.3s;
+}
+
+.card {
+  opacity: 0;
+  animation: appear .2s forwards;
+}
+
+@keyframes appear {
+  0% {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+@media (min-width: 710px) {
+  #cards{
+    max-width: 700px;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
 }
