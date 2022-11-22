@@ -44,3 +44,4 @@ Esse projeto está sob a licença MIT.
 ---
 
 by Fernando Rufino 
+> Conteúdo apresentado na NLW 10 Copa Explorer pela Rocketseat
