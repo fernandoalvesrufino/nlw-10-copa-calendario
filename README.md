@@ -33,6 +33,8 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 O Calendário da Copa é um projeto que mostra os jogos da Copa de 2022.
 
+- [Acesse o projeto finalizado, online](https://fernandoalvesrufino.github.io/nlw-10-copa-calendario-explorer/)
+
 ## 🔖 Layout
 
 Você pode visualizar o layout do projeto através [DESSE LINK](https://www.figma.com/file/BDjNB57ZiAXnGlcIHM2t4F/Calend%C3%A1rio-de-Jogos-(Community)/duplicate). É necessário ter conta no [Figma](https://figma.com) para acessá-lo.
